@@ -1,11 +1,14 @@
-import { HelloWorld } from "../src/components/HelloWorld";
+import { MainPage } from "../src/pages/MainPage";
 import "../public/css/styles.css";
+import { StyleProvider } from "vcc-ui";
 import React from "react";
 
 function HomePage() {
   return (
     <React.StrictMode>
-      <HelloWorld />
+      <StyleProvider>
+        <MainPage />
+      </StyleProvider>
     </React.StrictMode>
   );
 }
