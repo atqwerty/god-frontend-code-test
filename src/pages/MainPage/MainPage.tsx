@@ -1,5 +1,6 @@
 import React from "react";
 import { View } from "vcc-ui";
+import { Carousel } from "./components";
 
 // justifyContent prop of View doesn't work
 
@@ -13,7 +14,7 @@ const MainPage: React.FC = () => {
       }}
     >
       <div style={{ background: "green", width: "500px", height: "300px" }}>
-        adsf
+        <Carousel />
       </div>
     </View>
   );
