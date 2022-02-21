@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ItemsCarousel from "react-items-carousel";
 import { ChevronCircled } from "../../../../../src/ui";
+import { getCars } from "../../../../api/carRequest";
 
 const Carousel: React.FC = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const [cars, setCars] = useState([]);
+  console.log(cars);
   const chevronWidth = 50;
+
+  useEffect(() => {
+    getCars()
+      .then((res) => setCars(res))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <ItemsCarousel
@@ -24,10 +33,11 @@ const Carousel: React.FC = () => {
         leftChevronWrapper: "left_chevron",
       }}
     >
-      <div style={{ height: 440, background: "#EEE" }}>First card</div>
-      <div style={{ height: 440, background: "#EEE" }}>Second card</div>
-      <div style={{ height: 440, background: "#EEE" }}>Third card</div>
-      <div style={{ height: 440, background: "#EEE" }}>Fourth card</div>
+      {cars.map((car) => {
+        return (
+          <div style={{ height: 440, background: "#EEE" }}>{car.bodyType}</div>
+        );
+      })}
     </ItemsCarousel>
   );
 };
