@@ -50,7 +50,7 @@ const Carousel: React.FC<CarouselProps> = ({ cars }) => {
         <NotFoundCard />
       )}
       <View extend={{ marginTop: "1em", alignItems: "center" }}>
-        {styling.isMobile && (
+        {/*styling.isMobile && (
           <Dots
             length={carsToRender.length}
             active={activeItemIndex}
@@ -58,7 +58,7 @@ const Carousel: React.FC<CarouselProps> = ({ cars }) => {
             size={10}
             margin={5}
           />
-        )}
+	  )*/}
         <Spacer size={2} />
         <SearchBar
           callback={(value) =>
