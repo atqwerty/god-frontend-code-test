@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Inline, Text, Spacer, useTheme } from "vcc-ui";
+import { View, Inline, Text, Spacer, Link, useTheme } from "vcc-ui";
 
 interface CarInfoProps {
   carInfo: any;
@@ -41,6 +41,26 @@ const CarItem: React.FC<CarInfoProps> = ({ carInfo }) => {
       </Inline>
       <Spacer size={{ default: 4, "@media (max-width: 768px)": 8 }} />
       <img src={carInfo.imageUrl} />
+      <Spacer size={{ default: 4, "@media (max-width: 768px)": 8 }} />
+      <View
+        extend={{
+          display: "grid",
+          gridTemplateColumns: "50% 50%",
+          gridGap: "20px",
+          justifyItems: "center",
+        }}
+      >
+        <View extend={{ justifySelf: "end" }}>
+          <Link href={"/learn/" + carInfo.id} arrow="right">
+            Learn
+          </Link>
+        </View>
+        <View extend={{ justifySelf: "start" }}>
+          <Link href={"/shop/" + carInfo.id} arrow="right">
+            Shop
+          </Link>
+        </View>
+      </View>
     </View>
   );
 };

@@ -13,7 +13,7 @@ const MainPage: React.FC = () => {
         alignItems: "center",
       }}
     >
-      <View width={"1200px"} height={"500px"}>
+      <View width={"100%"} padding={"0 50px 0 50px"}>
         <Carousel />
       </View>
     </View>
