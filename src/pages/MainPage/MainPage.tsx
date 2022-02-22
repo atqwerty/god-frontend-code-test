@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Spinner } from "vcc-ui";
+import { View, Spinner, Logo } from "vcc-ui";
 import { Carousel } from "./components";
 import { getCars } from "../../api/carRequest";
 
@@ -24,6 +24,16 @@ const MainPage: React.FC = () => {
         justifyContent: "center",
       }}
     >
+      <View
+        extend={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          margin: "75px 0 0 100px",
+        }}
+      >
+        <Logo type="spreadmark" height="32" />
+      </View>
       <View padding={"0 50px 0 50px"}>
         {cars.length > 0 ? (
           <Carousel cars={cars} />
