@@ -13,9 +13,9 @@ const MainPage: React.FC = () => {
         alignItems: "center",
       }}
     >
-      <div style={{ width: "1200px", height: "500px" }}>
+      <View width={"1200px"} height={"500px"}>
         <Carousel />
-      </div>
+      </View>
     </View>
   );
 };

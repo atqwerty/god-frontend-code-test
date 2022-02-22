@@ -1,13 +1,15 @@
 import { MainPage } from "../src/pages/MainPage";
 import "../public/css/styles.css";
-import { StyleProvider } from "vcc-ui";
+import { StyleProvider, ThemePicker } from "vcc-ui";
 import React from "react";
 
 function HomePage() {
   return (
     <React.StrictMode>
       <StyleProvider>
-        <MainPage />
+        <ThemePicker>
+          <MainPage />
+        </ThemePicker>
       </StyleProvider>
     </React.StrictMode>
   );
