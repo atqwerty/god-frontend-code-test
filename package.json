@@ -10,10 +10,15 @@
     "@types/node": "^16.9.4",
     "@types/react": "^17.0.22",
     "@types/react-dom": "^17.0.9",
+    "axios": "^0.26.0",
     "next": "^11.1.2",
     "react": "^17.0.0",
+    "react-carousel-dots": "^0.1.0",
     "react-dom": "^17.0.0",
-    "typescript": "~4.4.3"
+    "react-items-carousel": "^2.8.0",
+    "styled-components": "^5.3.3",
+    "typescript": "~4.4.3",
+    "vcc-ui": "^2.19.0"
   },
   "scripts": {
     "dev": "next dev",
