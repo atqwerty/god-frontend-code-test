@@ -45,7 +45,9 @@ const Carousel: React.FC = ({ cars }) => {
       <Spacer />
       <SearchBar
         callback={(value) =>
-          setCarsToRender(cars.filter((car) => car.bodyType.includes(value)))
+          setCarsToRender(
+            cars.filter((car) => car.bodyType.includes(value.toLowerCase()))
+          )
         }
       />
     </View>
