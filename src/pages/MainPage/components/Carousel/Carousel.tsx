@@ -1,11 +1,21 @@
 import React, { useState, useContext } from "react";
 import ItemsCarousel from "react-items-carousel";
 import { ChevronCircled, StyleContext } from "../../../../../src/ui";
-import { CarItem, SearchBar } from "./components";
-import { View, Spacer, Card, CardContent, Text } from "vcc-ui";
+import { CarItem, NotFoundCard, SearchBar } from "./components";
+import { View, Spacer } from "vcc-ui";
 import Dots from "react-carousel-dots";
 
-const Carousel: React.FC = ({ cars }) => {
+interface CarouselProps {
+  cars: {
+    id: string;
+    modelName: string;
+    bodyType: string;
+    modelType: string;
+    imageUrl: string;
+  }[];
+}
+
+const Carousel: React.FC<CarouselProps> = ({ cars }) => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const [carsToRender, setCarsToRender] = useState(cars);
   const styling = useContext(StyleContext);
@@ -37,16 +47,10 @@ const Carousel: React.FC = ({ cars }) => {
           })}
         </ItemsCarousel>
       ) : (
-        <Card>
-          <CardContent>
-            <Text variant="ootah">Sorry...</Text>
-            <Spacer size={{ default: 4, "@media (max-width: 600px)": 2 }} />
-            <Text>No such car exists right now...</Text>
-          </CardContent>
-        </Card>
+        <NotFoundCard />
       )}
       <View extend={{ marginTop: "1em", alignItems: "center" }}>
-        {styling.isMobile && (
+        {/*styling.isMobile && (
           <Dots
             length={carsToRender.length}
             active={activeItemIndex}
@@ -54,7 +58,7 @@ const Carousel: React.FC = ({ cars }) => {
             size={10}
             margin={5}
           />
-        )}
+	  )*/}
         <Spacer size={2} />
         <SearchBar
           callback={(value) =>

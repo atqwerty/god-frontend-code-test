@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { TextInput } from "vcc-ui";
 
-const SearchBar: React.FC = ({ callback }) => {
+interface SearchBarProps {
+  callback: (value: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ callback }) => {
   const [value, setValue] = useState("");
 
   useEffect(() => {
