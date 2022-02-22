@@ -24,7 +24,7 @@ const CarItem: React.FC<CarInfoProps> = ({ carInfo }) => {
             fontWeight: "600 !important", // same here
             display: "inline",
             color: theme.color.foreground.primary,
-            fontSize: "22px !important", // same here
+            fontSize: "1.2em !important", // same here
           }}
         >
           {carInfo.modelName + " "}
@@ -33,17 +33,17 @@ const CarItem: React.FC<CarInfoProps> = ({ carInfo }) => {
           extend={{
             display: "inline",
             color: theme.color.foreground.secondary,
-            fontSize: "22px !important", // same here
+            fontSize: "1.2em !important", // same here
           }}
         >
           {carInfo.modelType}
         </Text>
       </Inline>
-      <Spacer size={{ default: 4, "@media (max-width: 768px)": 8 }} />
+      <Spacer size={{ default: 4, "@media (max-width: 600px)": 2 }} />
       <View>
         <img src={carInfo.imageUrl} />
       </View>
-      <Spacer size={{ default: 4, "@media (max-width: 768px)": 8 }} />
+      <Spacer size={{ default: 4, "@media (max-width: 600px)": 2 }} />
       <View
         extend={{
           display: "grid",

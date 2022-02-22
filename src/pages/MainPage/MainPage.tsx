@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { StyleContext } from "../../ui";
 import { View, Spinner, Logo } from "vcc-ui";
 import { Carousel } from "./components";
 import { getCars } from "../../api/carRequest";
@@ -7,6 +8,8 @@ import { getCars } from "../../api/carRequest";
 
 const MainPage: React.FC = () => {
   const [cars, setCars] = useState([]);
+  const styling = useContext(StyleContext);
+
   useEffect(() => {
     if (cars.length === 0) {
       getCars()
@@ -30,13 +33,13 @@ const MainPage: React.FC = () => {
             position: "absolute",
             top: 0,
             left: 0,
-            margin: "75px 0 0 100px",
+            margin: styling.logoMargin,
           }}
         >
-          <Logo type="spreadmark" height="32" />
+          <Logo type="spreadmark" height={styling.logoHeight} />
         </View>
       )}
-      <View padding={"0 50px 0 50px"}>
+      <View padding={styling.carouselPadding}>
         {cars.length > 0 ? (
           <Carousel cars={cars} />
         ) : (
