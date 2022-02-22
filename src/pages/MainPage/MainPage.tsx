@@ -4,8 +4,6 @@ import { View, Spinner, Logo } from "vcc-ui";
 import { Carousel } from "./components";
 import { getCars } from "../../api/carRequest";
 
-// justifyContent prop of View doesn't work
-
 const MainPage: React.FC = () => {
   const [cars, setCars] = useState([]);
   const styling = useContext(StyleContext);

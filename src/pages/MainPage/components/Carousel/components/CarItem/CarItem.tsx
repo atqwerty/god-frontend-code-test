@@ -2,7 +2,13 @@ import React from "react";
 import { View, Inline, Text, Spacer, Link, useTheme } from "vcc-ui";
 
 interface CarInfoProps {
-  carInfo: any;
+  carInfo: {
+    id: string;
+    modelName: string;
+    bodyType: string;
+    modelType: string;
+    imageUrl: string;
+  };
 }
 
 const CarItem: React.FC<CarInfoProps> = ({ carInfo }) => {
