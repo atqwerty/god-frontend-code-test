@@ -3,6 +3,7 @@ import ItemsCarousel from "react-items-carousel";
 import { ChevronCircled, StyleContext } from "../../../../../src/ui";
 import { CarItem, SearchBar } from "./components";
 import { View, Spacer, Card, CardContent, Text } from "vcc-ui";
+import Dots from "react-carousel-dots";
 
 const Carousel: React.FC = ({ cars }) => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -44,7 +45,17 @@ const Carousel: React.FC = ({ cars }) => {
           </CardContent>
         </Card>
       )}
-      <View extend={{ marginTop: "0.5em" }}>
+      <View extend={{ marginTop: "1em", alignItems: "center" }}>
+        {styling.isMobile && (
+          <Dots
+            length={carsToRender.length}
+            active={activeItemIndex}
+            visible={carsToRender.length}
+            size={10}
+            margin={5}
+          />
+        )}
+        <Spacer size={2} />
         <SearchBar
           callback={(value) =>
             setCarsToRender(

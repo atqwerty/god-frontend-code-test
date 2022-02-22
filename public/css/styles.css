@@ -34,11 +34,30 @@ html, body {
 	grid-column-end: 2;
 	grid-row-start: 2;
 }
+.react-carousel-dots-dot {
+	background-color: #EBEBEB !important;
+	border: 0 !important;
+}
+.react-carousel-dots-dot.active {
+    background-color: black !important;
+}
+.react-carousel-dots-dot.small {
+ transform: scale(1) !important;
+}
 @media only screen and (max-width: 600px) {
 .right_chevron {
 	display: none !important;
 }
 .left_chevron {
 	display: none !important;
+}
+}
+@media only screen and (max-width: 600px) {
+.carousel_wrapper {
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: auto;
+	justify-items: end;
+	grid-gap: 10px;
 }
 }

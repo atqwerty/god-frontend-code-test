@@ -4,7 +4,6 @@ const defaultStyleValue = {
   logoMargin: "75px 0 0 100px",
   logoHeight: "32",
   carouselPadding: "0 50px 0 50px",
-  searchBarMargin: "0.5em",
   isMobile: false,
 };
 
