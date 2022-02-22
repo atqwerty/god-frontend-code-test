@@ -9,7 +9,7 @@ const CarItem: React.FC<CarInfoProps> = ({ carInfo }) => {
   const theme = useTheme();
 
   return (
-    <View key={carInfo.id} height={"440px"}>
+    <View key={carInfo.id}>
       <Text
         extend={{
           fontWeight: "600 !important", // worked before, but got overwritten, so i had to use a hack
@@ -40,7 +40,9 @@ const CarItem: React.FC<CarInfoProps> = ({ carInfo }) => {
         </Text>
       </Inline>
       <Spacer size={{ default: 4, "@media (max-width: 768px)": 8 }} />
-      <img src={carInfo.imageUrl} />
+      <View>
+        <img src={carInfo.imageUrl} />
+      </View>
       <Spacer size={{ default: 4, "@media (max-width: 768px)": 8 }} />
       <View
         extend={{

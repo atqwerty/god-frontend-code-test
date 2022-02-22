@@ -7,13 +7,12 @@ import { Carousel } from "./components";
 const MainPage: React.FC = () => {
   return (
     <View
-      height={"100%"}
       extend={{
+        height: "100%",
         justifyContent: "center",
-        alignItems: "center",
       }}
     >
-      <View width={"100%"} padding={"0 50px 0 50px"}>
+      <View padding={"0 50px 0 50px"}>
         <Carousel />
       </View>
     </View>
