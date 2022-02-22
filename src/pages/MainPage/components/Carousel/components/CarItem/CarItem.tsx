@@ -9,7 +9,7 @@ const CarItem: React.FC<CarInfoProps> = ({ carInfo }) => {
   const theme = useTheme();
 
   return (
-    <View key={carInfo.id}>
+    <View>
       <Text
         extend={{
           fontWeight: "600 !important", // worked before, but got overwritten, so i had to use a hack
